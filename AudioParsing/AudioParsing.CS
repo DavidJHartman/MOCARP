@@ -7,11 +7,7 @@ namespace AudioParsing {
 
         byte[] wavFile;
 
-        public void loadWAVFile( string fileName ){
-
-            wavFile = System.IO.ReadAllBytes( fileName );
-
-        }
+        public void loadWAVFile(string fileName) => wavFile = File.ReadAllBytes(fileName);
         public byte[] WavFile { get => wavFile; set => wavFile = value; }
     }
 

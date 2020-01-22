@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 
 namespace MOCARP
 {
@@ -6,7 +7,7 @@ namespace MOCARP
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            SoundPlayer bebis = new SoundPlayer();
         }
     }
 }
