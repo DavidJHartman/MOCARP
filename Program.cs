@@ -7,7 +7,13 @@ namespace MOCARP
     {
         static void Main(string[] args)
         {
-            SoundPlayer bebis = new SoundPlayer();
+            AudioParsing.WAV testies = new AudioParsing.WAV();
+            testies.loadWAVFile("Sleep.wav");
+            Console.WriteLine("Beebis");
+            testies.fileLength();
+            SoundPlayer bebis = new SoundPlayer("Sleep.wav");
+            bebis.Load();
+            bebis.PlaySync();
         }
     }
 }
