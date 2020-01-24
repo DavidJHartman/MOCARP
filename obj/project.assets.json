@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "MathNet.Numerics/4.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -73,6 +82,25 @@
     }
   },
   "libraries": {
+    "MathNet.Numerics/4.9.0": {
+      "sha512": "4cYzhuMDq57oC6lwhMmuigdhP+oywmp1bMtFzvzz4wYr5eWbg0JLDPo/L1juqDkIBj+rc3FrxUEX7jcHRmnF+w==",
+      "type": "package",
+      "path": "mathnet.numerics/4.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/MathNet.Numerics.dll",
+        "lib/net40/MathNet.Numerics.xml",
+        "lib/net461/MathNet.Numerics.dll",
+        "lib/net461/MathNet.Numerics.xml",
+        "lib/netstandard1.3/MathNet.Numerics.dll",
+        "lib/netstandard1.3/MathNet.Numerics.xml",
+        "lib/netstandard2.0/MathNet.Numerics.dll",
+        "lib/netstandard2.0/MathNet.Numerics.xml",
+        "mathnet.numerics.4.9.0.nupkg.sha512",
+        "mathnet.numerics.nuspec"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -182,6 +210,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "MathNet.Numerics >= 4.9.0",
       "System.Windows.Extensions >= 4.7.0"
     ]
   },
@@ -191,11 +220,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MOCARP\\MOCARP.csproj",
+      "projectUniqueName": "c:\\MOCARP\\MOCARP.csproj",
       "projectName": "MOCARP",
-      "projectPath": "C:\\MOCARP\\MOCARP.csproj",
+      "projectPath": "c:\\MOCARP\\MOCARP.csproj",
       "packagesPath": "C:\\Users\\DFH\\.nuget\\packages\\",
-      "outputPath": "C:\\MOCARP\\obj\\",
+      "outputPath": "c:\\MOCARP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DFH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -222,6 +251,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "MathNet.Numerics": {
+            "target": "Package",
+            "version": "[4.9.0, )"
+          },
           "System.Windows.Extensions": {
             "target": "Package",
             "version": "[4.7.0, )"

@@ -17,3 +17,4 @@ C:\MOCARP\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.
 C:\MOCARP\obj\Debug\netcoreapp3.1\MOCARP.csproj.CopyComplete
 C:\MOCARP\obj\Debug\netcoreapp3.1\MOCARP.dll
 C:\MOCARP\obj\Debug\netcoreapp3.1\MOCARP.pdb
+C:\MOCARP\bin\Debug\netcoreapp3.1\MathNet.Numerics.dll

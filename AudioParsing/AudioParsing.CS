@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using MathNet.Numerics.IntegralTransforms;
 
 namespace AudioParsing {
 
@@ -17,10 +18,12 @@ namespace AudioParsing {
         uint    dwSamplesPerSec;
         uint    dwAvgBytesPerSec;
         ushort  wBlockAlign;
-        ushort    dwBitsPerSample;
+        ushort  dwBitsPerSample;
+        uint    dataSize;
     
         // The byte array for the actual wave file. This is unmodified and stores the byte data straight from the harddrive.
         byte[] wavFile;
+        byte[][] audio;
 
         public WAV( string fileName ){
 
@@ -53,12 +56,15 @@ namespace AudioParsing {
             Console.WriteLine( wBlockAlign );
             Console.WriteLine( dwBitsPerSample );
 
+            if ( System.Text.Encoding.ASCII.GetString(wavFile[36..40]) == "data" ){
+                dataSize = BitConverter.ToUInt32( wavFile[40..44], 0);
+            }
+            Console.WriteLine( dataSize );
 
         }
 
         public void loadWAVFile(string fileName) => wavFile = File.ReadAllBytes(fileName);
         public byte[] WavFile { get => wavFile; set => wavFile = value; }
-
 
     }
 
