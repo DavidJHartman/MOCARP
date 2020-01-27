@@ -29,6 +29,15 @@
           }
         }
       },
+      "NAudio/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NAudio.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.dll": {}
+        }
+      },
       "System.Drawing.Common/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -119,6 +128,24 @@
         "version.txt"
       ]
     },
+    "NAudio/1.9.0": {
+      "sha512": "PjcPhL5AnbF1YmZxqFYuAEVVRNCNWWIm6Gi32AGQ0dmHF9+s7TUFfVxEo46MbeIfpUE+Wz60ZNTLMXTxBI1m9w==",
+      "type": "package",
+      "path": "naudio/1.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/NAudio.dll",
+        "lib/net35/NAudio.xml",
+        "lib/netstandard2.0/NAudio.dll",
+        "lib/netstandard2.0/NAudio.xml",
+        "lib/uap10.0.10240/NAudio.dll",
+        "lib/uap10.0.10240/NAudio.pri",
+        "lib/uap10.0.10240/NAudio.xml",
+        "naudio.1.9.0.nupkg.sha512",
+        "naudio.nuspec"
+      ]
+    },
     "System.Drawing.Common/4.7.0": {
       "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
       "type": "package",
@@ -182,30 +209,29 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "NAudio >= 1.9.0",
       "System.Windows.Extensions >= 4.7.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DFH\\.nuget\\packages\\": {}
+    "C:\\Users\\Damion\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MOCARP\\MOCARP.csproj",
+      "projectUniqueName": "C:\\Users\\Damion\\Documents\\Code\\MOCARP\\MOCARP\\MOCARP.csproj",
       "projectName": "MOCARP",
-      "projectPath": "C:\\MOCARP\\MOCARP.csproj",
-      "packagesPath": "C:\\Users\\DFH\\.nuget\\packages\\",
-      "outputPath": "C:\\MOCARP\\obj\\",
+      "projectPath": "C:\\Users\\Damion\\Documents\\Code\\MOCARP\\MOCARP\\MOCARP.csproj",
+      "packagesPath": "C:\\Users\\Damion\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Damion\\Documents\\Code\\MOCARP\\MOCARP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DFH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Damion\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -222,6 +248,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "NAudio": {
+            "target": "Package",
+            "version": "[1.9.0, )"
+          },
           "System.Windows.Extensions": {
             "target": "Package",
             "version": "[4.7.0, )"
