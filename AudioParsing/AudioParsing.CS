@@ -6,12 +6,12 @@ namespace AudioParsing {
 
     class WAV{
         // Header information for the WAV File
-        char[]  _sGroupID;
+        string  _sGroupID;
         uint dwFileLength;
-        char[]  sRiffType;
+        string  sRiffType;
 
         // Format information for the WAV File
-        char[]  sGroupID;
+        string  sGroupID;
         uint    dwChunkSize;
         ushort  wFormatTag;
         ushort  wChannels;
@@ -23,18 +23,24 @@ namespace AudioParsing {
     
         // The byte array for the actual wave file. This is unmodified and stores the byte data straight from the harddrive.
         byte[] wavFile;
-        byte[][] audio;
+        int[][] audio;
 
         public WAV( string fileName ){
 
             wavFile = File.ReadAllBytes( fileName );
             // Header Parsing
-            _sGroupID = System.Text.Encoding.ASCII.GetString(wavFile[0..4]).ToCharArray();
+            if ((_sGroupID = System.Text.Encoding.ASCII.GetString(wavFile[0..4])) != "RIFF"){
+                Console.WriteLine( "Header chunk missing or out of alignment");
+                return;
+            }
             dwFileLength = BitConverter.ToUInt32( wavFile[4..8], 0 );
-            sRiffType = System.Text.Encoding.ASCII.GetString(WavFile[8..12]).ToCharArray();
+            sRiffType = System.Text.Encoding.ASCII.GetString(WavFile[8..12]);
 
             // Format Parsing
-            sGroupID = System.Text.Encoding.ASCII.GetString(wavFile[12..16]).ToCharArray();
+            if ((sGroupID = System.Text.Encoding.ASCII.GetString(wavFile[12..16])) != "fmt "){
+                Console.WriteLine( "fmt chunk missing or out of alignment");
+                return;
+            }
             dwChunkSize = BitConverter.ToUInt32( wavFile[16..20], 0 );
             wFormatTag = BitConverter.ToUInt16( wavFile[20..22], 0);
             wChannels = BitConverter.ToUInt16( wavFile[22..24], 0);
@@ -42,6 +48,22 @@ namespace AudioParsing {
             dwAvgBytesPerSec = BitConverter.ToUInt32( wavFile[28..32], 0);
             wBlockAlign = BitConverter.ToUInt16( wavFile[32..34], 0);
             dwBitsPerSample = BitConverter.ToUInt16( wavFile[34..36], 0);
+
+            // Data Parsing
+            if ( System.Text.Encoding.ASCII.GetString(wavFile[36..40]) == "data" ){
+                dataSize = BitConverter.ToUInt32( wavFile[40..44], 0);
+                audio = new int[wChannels][];
+                byte[] temp = new byte[dataSize];
+                for ( int i = 0; i < wChannels; i++ ){
+                    audio[i] = new int[dataSize / ( wChannels * dwBitsPerSample / 8)];
+                }
+
+                for ( int i = 0; i < audio[0].Length; i++ ){
+                    for ( int j = 0; j < wChannels; j++ ) {
+                        // WORKING ON PARSING BYTE DATA
+                    }
+                }
+            }
 
             Console.WriteLine( _sGroupID );
             Console.WriteLine( dwFileLength );
@@ -56,10 +78,7 @@ namespace AudioParsing {
             Console.WriteLine( wBlockAlign );
             Console.WriteLine( dwBitsPerSample );
 
-            if ( System.Text.Encoding.ASCII.GetString(wavFile[36..40]) == "data" ){
-                dataSize = BitConverter.ToUInt32( wavFile[40..44], 0);
-            }
-            Console.WriteLine( dataSize );
+            
 
         }
 
