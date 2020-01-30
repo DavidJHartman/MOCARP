@@ -14,11 +14,11 @@ namespace AudioParsing {
         string  sGroupID;
         uint    dwChunkSize;
         ushort  wFormatTag;
-        ushort  wChannels;
-        uint    dwSamplesPerSec;
+        public ushort  wChannels;
+        public uint    dwSamplesPerSec;
         uint    dwAvgBytesPerSec;
         ushort  wBlockAlign;
-        ushort  dwBitsPerSample;
+        public ushort  dwBitsPerSample;
         public uint    dataSize;
     
         // The byte array for the actual wave file. This is unmodified and stores the byte data straight from the harddrive.

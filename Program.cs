@@ -12,7 +12,7 @@ namespace MOCARP
         {
             AudioParsing.WAV newWav = new AudioParsing.WAV("Don't Care.wav");
             var ms = new MemoryStream(newWav.wavFile);
-            var rs = new RawSourceWaveStream(ms, new WaveFormat(44100, 16,1));
+            var rs = new RawSourceWaveStream(ms, new WaveFormat((int)newWav.dwSamplesPerSec, (int)newWav.dwBitsPerSample, (int)newWav.wChannels));
             var outputDevice = new WaveOutEvent();
 
             outputDevice.Init(rs);
