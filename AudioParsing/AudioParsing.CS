@@ -22,7 +22,7 @@ namespace AudioParsing {
         public uint    dataSize;
     
         // The byte array for the actual wave file. This is unmodified and stores the byte data straight from the harddrive.
-        byte[] wavFile;
+        public byte[] wavFile;
         int[][] audio;
 
         public WAV( string fileName ){

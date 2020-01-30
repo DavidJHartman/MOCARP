@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.IO;
 using System.Media;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
@@ -10,12 +11,11 @@ namespace MOCARP
         static void Main(string[] args)
         {
             AudioParsing.WAV newWav = new AudioParsing.WAV("Don't Care.wav");
-            var audioFile = new AudioFileReader("Don't Care.wav");
+            var ms = new MemoryStream(newWav.wavFile);
+            var rs = new RawSourceWaveStream(ms, new WaveFormat(44100, 16,1));
             var outputDevice = new WaveOutEvent();
-            var trimmed = new OffsetSampleProvider(audioFile);
-            trimmed.SkipOver = TimeSpan.FromSeconds(15);
 
-            outputDevice.Init(audioFile);
+            outputDevice.Init(rs);
             outputDevice.Play();
             while (outputDevice.PlaybackState == PlaybackState.Playing) 
             {
@@ -23,7 +23,7 @@ namespace MOCARP
                 outputDevice.Pause();
                 Random random = new Random();
                 int num = random.Next(checked((int)newWav.dataSize));
-                audioFile.Position = num;
+                rs.Position = num;
                 outputDevice.Play();
             }
 
