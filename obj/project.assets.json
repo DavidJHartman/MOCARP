@@ -243,24 +243,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Damion\\.nuget\\packages\\": {}
+    "C:\\Users\\DFH\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\MOCARP\\MOCARP.csproj",
+      "projectUniqueName": "C:\\MOCARP\\MOCARP.csproj",
       "projectName": "MOCARP",
-      "projectPath": "c:\\MOCARP\\MOCARP.csproj",
+      "projectPath": "C:\\MOCARP\\MOCARP.csproj",
       "packagesPath": "C:\\Users\\DFH\\.nuget\\packages\\",
-      "outputPath": "c:\\MOCARP\\obj\\",
+      "outputPath": "C:\\MOCARP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Damion\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\DFH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -308,5 +310,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\MOCARP\\obj\\MOCARP.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

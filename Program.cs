@@ -9,6 +9,7 @@ namespace MOCARP
     {
         static void Main(string[] args)
         {
+            AudioParsing.WAV newWav = new AudioParsing.WAV("Don't Care.wav");
             var audioFile = new AudioFileReader("Don't Care.wav");
             var outputDevice = new WaveOutEvent();
             var trimmed = new OffsetSampleProvider(audioFile);
@@ -21,7 +22,7 @@ namespace MOCARP
                 Thread.Sleep(1000);
                 outputDevice.Pause();
                 Random random = new Random();
-                int num = random.Next(5000000);
+                int num = random.Next(checked((int)newWav.dataSize));
                 audioFile.Position = num;
                 outputDevice.Play();
             }

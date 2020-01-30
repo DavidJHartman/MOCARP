@@ -38,3 +38,4 @@ C:\Users\Damion\Documents\Code\MOCARP\MOCARP\bin\Debug\netcoreapp3.1\runtimes\un
 C:\Users\Damion\Documents\Code\MOCARP\MOCARP\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Damion\Documents\Code\MOCARP\MOCARP\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\Damion\Documents\Code\MOCARP\MOCARP\obj\Debug\netcoreapp3.1\MOCARP.csproj.CopyComplete
+C:\MOCARP\bin\Debug\netcoreapp3.1\NAudio.dll

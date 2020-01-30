@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Damion\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Damion\\.nuget\\packages"
+      "C:\\Users\\DFH\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\DFH\\.nuget\\packages"
     ]
   }
 }
