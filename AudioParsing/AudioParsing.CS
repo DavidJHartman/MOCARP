@@ -5,6 +5,7 @@ using MathNet.Numerics.IntegralTransforms;
 namespace AudioParsing {
 
     class WAV{
+
         // Header information for the WAV File
         string  _sGroupID;
         uint dwFileLength;
@@ -24,6 +25,7 @@ namespace AudioParsing {
         // The byte array for the actual wave file. This is unmodified and stores the byte data straight from the harddrive.
         byte[] wavFile;
         int[][] audio;
+        float[][] fAudio;
 
         public WAV( string fileName ){
 
@@ -51,17 +53,49 @@ namespace AudioParsing {
 
             // Data Parsing
             if ( System.Text.Encoding.ASCII.GetString(wavFile[36..40]) == "data" ){
-                dataSize = BitConverter.ToUInt32( wavFile[40..44], 0);
-                audio = new int[wChannels][];
-                byte[] temp = new byte[dataSize];
-                for ( int i = 0; i < wChannels; i++ ){
-                    audio[i] = new int[dataSize / ( wChannels * dwBitsPerSample / 8)];
-                }
 
-                for ( int i = 0; i < audio[0].Length; i++ ){
+                dataSize = BitConverter.ToUInt32( wavFile[40..44], 0);
+                var dataSizeBytes = dataSize / ( wChannels * (dwBitsPerSample / 8 ) );
+
+                // set 2D array length and width
+                audio = new int[(int)wChannels][];
+                for ( int i = 0; i < wChannels; i++ )
+                    audio[i] = new int[dataSizeBytes];
+                
+                int IteratorSkip = 0;
+                for ( int i = 0; i < audio[0].Length; ){
                     for ( int j = 0; j < wChannels; j++ ) {
-                        // WORKING ON PARSING BYTE DATA
+
+                        // The 44 we use throughout this section is to represent the last byte of the data chunk metadata
+                        // That way, from 44 on, all bytes represent samples
+                        
+                        switch(dwBitsPerSample){
+                            case 8:
+                                // Do something
+                                IteratorSkip = 1;
+                                break;
+
+                            case 16:
+                                int tempValue;
+                                tempValue = wavFile[i + j + 44];
+                                tempValue = tempValue << 8;
+                                tempValue = tempValue | wavFile[i + 1 + j + 44];
+                                audio[j][i] = tempValue;
+                                IteratorSkip = 2;
+                                break;
+
+                            case 32:
+                                // Do something
+                                IteratorSkip = 4;
+                                break;
+                            default:
+                                IteratorSkip = 0;
+                                Console.WriteLine( "Data Byte size is unrecognized");
+                                return;
+                        }
                     }
+
+                    i += IteratorSkip;
                 }
             }
 

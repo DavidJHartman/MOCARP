@@ -7,7 +7,7 @@ namespace MOCARP
     {
         static void Main(string[] args)
         {
-            AudioParsing.WAV testWAV = new AudioParsing.WAV( "Don't Care.wav" );
+            
         }
     }
 }
