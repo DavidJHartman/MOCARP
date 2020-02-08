@@ -26,7 +26,6 @@ namespace AudioParsing {
         public byte[] wavFile;
         int[][] audio;
         float[][] fAudio;
-
         public WAV( string fileName ){
 
             wavFile = File.ReadAllBytes( fileName );
@@ -71,15 +70,15 @@ namespace AudioParsing {
                         
                         switch(dwBitsPerSample){
                             case 8:
-                                // Do something
+                                audio[j][i] = wavFile[i + j];
                                 IteratorSkip = 1;
                                 break;
 
                             case 16:
                                 int tempValue;
-                                tempValue = wavFile[i + j + 44];
+                                tempValue = wavFile[i + (j*2) + 44];
                                 tempValue = tempValue << 8;
-                                tempValue = tempValue | wavFile[i + 1 + j + 44];
+                                tempValue = tempValue | wavFile[i + 1 + (j*2) + 44];
                                 audio[j][i] = tempValue;
                                 IteratorSkip = 2;
                                 break;
