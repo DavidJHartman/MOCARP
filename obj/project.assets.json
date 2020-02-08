@@ -38,6 +38,15 @@
           }
         }
       },
+      "NAudio/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NAudio.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.dll": {}
+        }
+      },
       "System.Drawing.Common/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -147,6 +156,24 @@
         "version.txt"
       ]
     },
+    "NAudio/1.9.0": {
+      "sha512": "PjcPhL5AnbF1YmZxqFYuAEVVRNCNWWIm6Gi32AGQ0dmHF9+s7TUFfVxEo46MbeIfpUE+Wz60ZNTLMXTxBI1m9w==",
+      "type": "package",
+      "path": "naudio/1.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/NAudio.dll",
+        "lib/net35/NAudio.xml",
+        "lib/netstandard2.0/NAudio.dll",
+        "lib/netstandard2.0/NAudio.xml",
+        "lib/uap10.0.10240/NAudio.dll",
+        "lib/uap10.0.10240/NAudio.pri",
+        "lib/uap10.0.10240/NAudio.xml",
+        "naudio.1.9.0.nupkg.sha512",
+        "naudio.nuspec"
+      ]
+    },
     "System.Drawing.Common/4.7.0": {
       "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
       "type": "package",
@@ -211,6 +238,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "MathNet.Numerics >= 4.9.0",
+      "NAudio >= 1.9.0",
       "System.Windows.Extensions >= 4.7.0"
     ]
   },
@@ -220,11 +248,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\MOCARP\\MOCARP.csproj",
+      "projectUniqueName": "C:\\MOCARP\\MOCARP.csproj",
       "projectName": "MOCARP",
-      "projectPath": "c:\\MOCARP\\MOCARP.csproj",
+      "projectPath": "C:\\MOCARP\\MOCARP.csproj",
       "packagesPath": "C:\\Users\\DFH\\.nuget\\packages\\",
-      "outputPath": "c:\\MOCARP\\obj\\",
+      "outputPath": "C:\\MOCARP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DFH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -255,6 +283,10 @@
             "target": "Package",
             "version": "[4.9.0, )"
           },
+          "NAudio": {
+            "target": "Package",
+            "version": "[1.9.0, )"
+          },
           "System.Windows.Extensions": {
             "target": "Package",
             "version": "[4.7.0, )"
@@ -278,5 +310,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\MOCARP\\obj\\MOCARP.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

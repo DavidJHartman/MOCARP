@@ -6,5 +6,6 @@
   <ItemGroup>
     <PackageReference Include="System.Windows.Extensions" Version="4.7.0"/>
     <PackageReference Include="MathNet.Numerics" Version="4.9.0"/>
+    <PackageReference Include="NAudio" Version="1.9.0"/>
   </ItemGroup>
 </Project>
