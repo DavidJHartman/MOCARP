@@ -1,31 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MOCARP\\MOCARP.csproj": {}
+    "C:\\Code Projects\\MOCARP\\MOCARP.csproj": {}
   },
   "projects": {
-    "C:\\MOCARP\\MOCARP.csproj": {
+    "C:\\Code Projects\\MOCARP\\MOCARP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MOCARP\\MOCARP.csproj",
+        "projectUniqueName": "C:\\Code Projects\\MOCARP\\MOCARP.csproj",
         "projectName": "MOCARP",
-        "projectPath": "C:\\MOCARP\\MOCARP.csproj",
-        "packagesPath": "C:\\Users\\DFH\\.nuget\\packages\\",
-        "outputPath": "C:\\MOCARP\\obj\\",
+        "projectPath": "C:\\Code Projects\\MOCARP\\MOCARP.csproj",
+        "packagesPath": "C:\\Users\\David Hartman\\.nuget\\packages\\",
+        "outputPath": "C:\\Code Projects\\MOCARP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DFH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\David Hartman\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "net5.0": {
             "projectReferences": {}
           }
         },
@@ -36,7 +34,7 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net5.0": {
           "dependencies": {
             "MathNet.Numerics": {
               "target": "Package",
@@ -66,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.7.20366.6\\RuntimeIdentifierGraph.json"
         }
       }
     }

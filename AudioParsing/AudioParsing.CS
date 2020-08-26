@@ -24,8 +24,13 @@ namespace AudioParsing {
     
         // The byte array for the actual wave file. This is unmodified and stores the byte data straight from the harddrive.
         public byte[] wavFile;
-        int[][] audio;
+        public int[][] audio;
         float[][] fAudio;
+
+        uint numberOfBytesPerChunk(){
+            return dwChunkSize/8;
+        }
+
         public WAV( string fileName ){
 
             wavFile = File.ReadAllBytes( fileName );

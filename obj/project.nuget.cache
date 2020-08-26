@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "x8I27BDCGoKwwJSwM0GWZubvKOHrDfPS0O6BlR2glaHGuXZZ6QSekCnzJsvP/9xQ49uNfQ+eHSXu/sq1CmL2pQ==",
+  "success": true,
+  "projectFilePath": "C:\\Code Projects\\MOCARP\\MOCARP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\David Hartman\\.nuget\\packages\\mathnet.numerics\\4.9.0\\mathnet.numerics.4.9.0.nupkg.sha512",
+    "C:\\Users\\David Hartman\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\David Hartman\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\David Hartman\\.nuget\\packages\\naudio\\1.9.0\\naudio.1.9.0.nupkg.sha512",
+    "C:\\Users\\David Hartman\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\David Hartman\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
